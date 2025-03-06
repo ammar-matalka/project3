@@ -1,21 +1,54 @@
-/* styles.css */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f0f8ff;
     color: #333;
 }
 
+.why-choose-us {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.why-choose-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+.why-choose-us li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.why-choose-us li::before {
+    content: '🌸';
+    margin-right: 10px;
+    color: #ff69b4;
+}
+
+.why-choose-us img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
 header {
-    background-color: #ff6f61;
+    background-color: #ff69b4;
     color: white;
     padding: 20px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     margin: 0;
+    font-size: 2.5em;
 }
 
 main {
@@ -25,58 +58,104 @@ main {
 .about-us {
     max-width: 900px;
     margin: 0 auto;
+    text-align: center;
 }
 
-.card {
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.card h3 {
-    margin-top: 0;
+.content.reverse {
+    flex-direction: row-reverse;
+}
+
+.content:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+    flex: 1;
+    margin-right: 20px;
+    text-align: center;
+
+}
+
+.image {
+    flex: 1;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.team {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .team-member {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    border: 2px solid #ff6f61;
-    border-radius: 10px;
-    padding: 10px;
+    
 }
 
-.team-member .box {
-    flex: 1;
-    padding: 10px;
-}
-
-.team-member .border-line {
-    width: 4px;
-    height: 100%;
-    background-color: #ff6f61;
-    margin-right: 10px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    background: url('checkmark.png') no-repeat left center;
-    padding-left: 30px;
-    margin-bottom: 10px;
+.team-member img {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1PX 0;
+    padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li::before {
+    content: '🌸';
+    margin-right: 10px;
+    color: #ff69b4;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.content, .team, .why-choose-us {
+    animation: fadeIn 1s ease-in-out;
 }
